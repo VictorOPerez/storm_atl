@@ -12,7 +12,7 @@ export default function Page() {
     <div className=" -mt-15">
 
       {/* Tu navbar fijo arriba */}
-      <Hero city="Atlanta" onSubmitText={(t) => console.log(t)} />
+      <Hero city="Atlanta" />
       <ServiciosSection />
       <DailyRoutineHeading text="Nuestro día a día" className="py-10" />
 
