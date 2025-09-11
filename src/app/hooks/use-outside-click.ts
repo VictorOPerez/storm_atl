@@ -1,18 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-type OutsideClickHandler = (event: MouseEvent | TouchEvent) => void;
+type OutsideClickEvent = MouseEvent | TouchEvent;
+type OutsideClickHandler = (event: OutsideClickEvent) => void;
 
-export function useOutsideClick(
-    ref: React.RefObject<HTMLElement>,
+export function useOutsideClick<T extends HTMLElement = HTMLElement>(
+    ref: React.RefObject<T>,
     callback: OutsideClickHandler
 ) {
+    // Mantén siempre la última referencia del callback sin re-suscribir listeners
+    const cbRef = useRef<OutsideClickHandler>(callback);
     useEffect(() => {
-        const listener = (event: MouseEvent | TouchEvent) => {
+        cbRef.current = callback;
+    }, [callback]);
+
+    useEffect(() => {
+        const listener = (event: OutsideClickEvent) => {
             const el = ref.current;
             if (!el) return;
             const target = event.target as Node | null;
             if (target && el.contains(target)) return;
-            callback(event);
+            cbRef.current(event);
         };
 
         document.addEventListener("mousedown", listener);
@@ -22,5 +29,5 @@ export function useOutsideClick(
             document.removeEventListener("mousedown", listener);
             document.removeEventListener("touchstart", listener);
         };
-    }, [ref, callback]);
+    }, [ref]);
 }
