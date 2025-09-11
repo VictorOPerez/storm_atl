@@ -2,13 +2,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 type NavItem = { label: string; href: string };
 
 const NAV_ITEMS: NavItem[] = [
     { label: "Inicio", href: "/" },
     { label: "Precios", href: "/precios" },
-    { label: "Cobertura", href: "/covertura" },
+    { label: "Cobertura", href: "/covertura" }, // verifica la ruta si es "cobertura"
     { label: "Contacto", href: "/contacto" },
 ];
 
@@ -37,7 +39,12 @@ export default function Navbar() {
         function onClick(e: MouseEvent) {
             if (!open) return;
             const target = e.target as Node;
-            if (panelRef.current && !panelRef.current.contains(target) && btnRef.current && !btnRef.current.contains(target)) {
+            if (
+                panelRef.current &&
+                !panelRef.current.contains(target) &&
+                btnRef.current &&
+                !btnRef.current.contains(target)
+            ) {
                 setOpen(false);
             }
         }
@@ -58,25 +65,33 @@ export default function Navbar() {
             >
                 <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
                     {/* Logo */}
-                    <a href="/" className="flex items-center gap-2 shrink-0 absolute top-3 z-20">
-                        {/* Sustituye por <Image> si usas next/image */}
-                        <img src="/logo/logo2.png" alt="Logo" className="h-25 w-auto" />
-                    </a>
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 shrink-0 absolute top-3 z-20"
+                        aria-label="Ir al inicio"
+                    >
+                        <Image
+                            src="/logo/logo2.png"
+                            alt="Logo"
+                            width={120}
+                            height={40}
+                            className="h-25 w-auto"
+                            priority
+                        />
+                    </Link>
 
                     {/* Links desktop */}
-                    <nav className=" hidden md:flex items-center gap-6 ml-60">
+                    <nav className="hidden md:flex items-center gap-6 ml-60">
                         {NAV_ITEMS.map((it) => (
-                            <a
+                            <Link
                                 key={it.href}
                                 href={it.href}
                                 className="text-sm text-white/80 hover:text-white transition-colors"
                             >
                                 {it.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
-
-                    {/* CTA desktop */}
 
                     {/* Botón hamburguesa (móvil) */}
                     <div className="ml-auto md:hidden">
@@ -100,21 +115,19 @@ export default function Navbar() {
                     className={`md:hidden bg-black/70 backdrop-blur supports-[backdrop-filter]:bg-black/55 will-change-transform origin-top transition-transform duration-200 ease-out ${open ? "scale-y-100" : "scale-y-0"
                         }`}
                 >
-                    <div className="px-4 pt-15 pb-4  bg-black/85 border-t border-white/10">
+                    <div className="px-4 pt-15 pb-4 bg-black/85 border-t border-white/10">
                         <nav className="flex flex-col">
                             {NAV_ITEMS.map((it) => (
-                                <a
+                                <Link
                                     key={it.href}
                                     href={it.href}
                                     onClick={() => setOpen(false)}
                                     className="py-3 text-base text-white/90 border-b border-white/10 last:border-b-0"
                                 >
                                     {it.label}
-                                </a>
+                                </Link>
                             ))}
                         </nav>
-
-
                     </div>
                 </div>
             </header>
@@ -139,20 +152,20 @@ function BurgerIcon({ open }: { open: boolean }) {
             {/* línea superior */}
             <path
                 d="M4 6H20"
-                className={`transition-transform duration-200 ease-out origin-center [transform-box:fill-box]
-          ${open ? "translate-y-[6px] rotate-45" : ""}`}
+                className={`transition-transform duration-200 ease-out origin-center [transform-box:fill-box] ${open ? "translate-y-[6px] rotate-45" : ""
+                    }`}
             />
             {/* línea media */}
             <path
                 d="M4 12H20"
-                className={`transition-opacity duration-150 ease-out
-          ${open ? "opacity-0" : "opacity-100"}`}
+                className={`transition-opacity duration-150 ease-out ${open ? "opacity-0" : "opacity-100"
+                    }`}
             />
             {/* línea inferior */}
             <path
                 d="M4 18H20"
-                className={`transition-transform duration-200 ease-out origin-center [transform-box:fill-box]
-          ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+                className={`transition-transform duration-200 ease-out origin-center [transform-box:fill-box] ${open ? "-translate-y-[6px] -rotate-45" : ""
+                    }`}
             />
         </svg>
     );
