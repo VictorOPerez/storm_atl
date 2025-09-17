@@ -8,10 +8,10 @@ import Image from "next/image";
 type NavItem = { label: string; href: string };
 
 const NAV_ITEMS: NavItem[] = [
-    { label: "Inicio", href: "/" },
-    { label: "Precios", href: "/precios" },
-    { label: "Cobertura", href: "/covertura" }, // verifica la ruta si es "cobertura"
-    { label: "Contacto", href: "/contacto" },
+    { label: "Home", href: "/" },
+    { label: "Pricing", href: "/precios" },
+    { label: "Coverage", href: "/covertura" }, // verifica la ruta si es "cobertura"
+    { label: "Contact", href: "/contacto" },
 ];
 
 export default function Navbar() {
@@ -68,10 +68,10 @@ export default function Navbar() {
                     <Link
                         href="/"
                         className="flex items-center gap-2 shrink-0 absolute top-3 z-20"
-                        aria-label="Ir al inicio"
+                        aria-label="Go to home"
                     >
                         <Image
-                            src="/logo/logo2.png"
+                            src="/logo/logo3.png"
                             alt="Logo"
                             width={120}
                             height={40}
@@ -81,7 +81,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Links desktop */}
-                    <nav className="hidden md:flex items-center gap-6 ml-60">
+                    <nav className="hidden md:flex items-center gap-6 ml-90">
                         {NAV_ITEMS.map((it) => (
                             <Link
                                 key={it.href}
@@ -100,7 +100,7 @@ export default function Navbar() {
                             onClick={() => setOpen((v) => !v)}
                             aria-expanded={open}
                             aria-controls="mobile-menu"
-                            aria-label="Abrir menú"
+                            aria-label="Open menu"
                             className="p-2 rounded-lg border border-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
                         >
                             <BurgerIcon open={open} />

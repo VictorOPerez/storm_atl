@@ -1,10 +1,11 @@
 "use client";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { useId } from "react";
-import remolque from "../../public/servicios/remolque.png";
+import remolque from "../../public/servicios/remolque.webp";
 import bateria from "../../public/servicios/bateria.png";
-import tire from "../../public/servicios/tire.png";
-import openImg from "../../public/servicios/open.png";
+import bateriaheavy from "../../public/servicios/bateriaheavy.webp";
+import tire from "../../public/servicios/tire.webp";
+import openImg from "../../public/servicios/open.webp";
 import lodo from "../../public/servicios/lodo.png";
 import gas from "../../public/servicios/gas.png";
 import { StaticImageData } from "next/image";
@@ -83,25 +84,25 @@ type CardData = {
 // Usa tus propias imágenes si quieres (colócalas en /public/images/services/*)
 const data: CardData[] = [
     {
-        category: "Servicio",
-        title: "Remolque Seguro 24/7",
+        category: "Service",
+        title: "Safe Towing 24/7",
         src: remolque,
         content: (
             <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
                 <p>
-                    Remolque rápido y cuidadoso para averías o accidentes. Flota moderna, operadores
-                    WreckMaster y amarres de 4 puntos para cero daños.
+                    Fast, careful towing for breakdowns or accidents. Modern fleet, WreckMaster
+                    operators, and 4-point tie-downs for zero damage.
                 </p>
                 {/* Remolque Seguro 24/7 */}
                 <FancyList
                     items={[
-                        "Plataforma y arrastre según el vehículo",
-                        "Traslado a tu taller o destino",
-                        "ETA en tiempo real y precio confirmado",
+                        "Flatbed and wheel-lift as needed",
+                        "Transport to your shop or destination",
+                        "Real-time ETA and confirmed price",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Ideal para: fallas mecánicas, colisiones, traslados programados.
+                    Ideal for: mechanical breakdowns, collisions, scheduled moves.
                 </p>
             </div>
         ),
@@ -109,25 +110,51 @@ const data: CardData[] = [
     },
 
     {
-        category: "Servicio",
-        title: "Arranque de Batería",
+        category: "Service",
+        title: "Heavy Duty Jump Starter",
+        src: bateriaheavy,
+        content: (
+            <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
+                <p>
+                    Professional heavy-duty <em>jump start</em> for trucks, buses, RVs, and equipment.
+                    12/24V commercial-grade booster with safe connection sequence to protect the ECM
+                    and sensitive electronics.
+                </p>
+                {/* Arranque de Batería (Heavy Duty) */}
+                <FancyList
+                    items={[
+                        "12/24V high-amperage booster for diesel engines",
+                        "Safe, ECM-friendly connection for trucks, buses & machinery",
+                        "Voltage check and alternator test when possible",
+                    ]}
+                />
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                    Useful when: no crank, dim lights, repeated clicking, or after long idle time.
+                </p>
+            </div>
+        ),
+        Icon: BatteryNeon,
+    },
+    {
+        category: "Service",
+        title: "Battery Jump Start",
         src: bateria,
         content: (
             <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
                 <p>
-                    Diagnóstico básico y <em>jump start</em> seguro. Usamos equipos protegidos para
-                    no dañar tu electrónica.
+                    Basic diagnostics and a safe <em>jump start</em>. We use protected equipment to
+                    avoid damaging your electronics.
                 </p>
                 {/* Arranque de Batería */}
                 <FancyList
                     items={[
-                        "Prueba de voltaje de batería",
-                        "Booster/puenteo con protección",
-                        "Recomendaciones si requiere reemplazo",
+                        "Battery voltage test",
+                        "Protected boost/jump",
+                        "Recommendations if replacement is needed",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Útil cuando: luces débiles, clic del arrancador, batería descargada.
+                    Useful when: dim lights, starter click, dead battery.
                 </p>
             </div>
         ),
@@ -135,25 +162,25 @@ const data: CardData[] = [
     },
 
     {
-        category: "Servicio",
-        title: "Cambio de Llanta en Ruta",
+        category: "Service",
+        title: "On-Road Tire Change",
         src: tire,
         content: (
             <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
                 <p>
-                    Sustituimos tu llanta pinchada por la de repuesto de forma rápida y segura, sin
-                    que te arriesgues en el acotamiento.
+                    We replace your flat with the spare quickly and safely, so you don’t risk
+                    yourself on the shoulder.
                 </p>
                 {/* Cambio de Llanta en Ruta */}
                 <FancyList
                     items={[
-                        "Herramientas adecuadas y torque correcto",
-                        "Revisión de presión del repuesto",
-                        "Asesoría si el repuesto no es usable",
+                        "Proper tools and correct torque",
+                        "Spare’s pressure check",
+                        "Advice if the spare is not usable",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Ten a mano: ubicación, tipo de rin y si tienes tu llanta de repuesto.
+                    Have ready: location, wheel type, and whether you have a spare.
                 </p>
             </div>
         ),
@@ -161,25 +188,25 @@ const data: CardData[] = [
     },
 
     {
-        category: "Servicio",
-        title: "Apertura sin Daños",
+        category: "Service",
+        title: "No-Damage Lockout",
         src: openImg,
         content: (
             <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
                 <p>
-                    Apertura profesional de puertas sin afectar biseles ni burletes. Técnicas
-                    no invasivas y cuidado del acabado.
+                    Professional door unlocks without harming trim or weatherstrips. Non-invasive
+                    techniques and careful finish work.
                 </p>
                 {/* Apertura sin Daños */}
                 <FancyList
                     items={[
-                        "Herramientas específicas por modelo",
-                        "Verificación básica de propiedad",
-                        "Revisión de funcionamiento de seguros",
+                        "Model-specific tools",
+                        "Basic ownership verification",
+                        "Check door-lock operation afterward",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Ten a mano: identificación y datos del vehículo.
+                    Have on hand: ID and vehicle details.
                 </p>
             </div>
         ),
@@ -187,25 +214,25 @@ const data: CardData[] = [
     },
 
     {
-        category: "Servicio",
-        title: "Rescate / Winch-Out",
+        category: "Service",
+        title: "Winch-Out / Recovery",
         src: lodo,
         content: (
             <div className="space-y-4 text-neutral-400 dark:text-neutral-200">
                 <p>
-                    Extracción segura de vehículos atascados en lodo, cunetas o pendientes.
-                    Evaluamos puntos de anclaje y ángulos para evitar daños.
+                    Safe extraction of vehicles stuck in mud, ditches, or slopes. We assess anchor
+                    points and angles to avoid damage.
                 </p>
                 {/* Rescate / Winch-Out */}
                 <FancyList
                     items={[
-                        "Cabresto, eslingas y protecciones",
-                        "Maniobra controlada por operadores certificados",
-                        "Inspección visual posterior",
+                        "Winch, straps, and protective gear",
+                        "Controlled maneuver by certified operators",
+                        "Post-recovery visual inspection",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Comparte: tipo de terreno, tracción del vehículo y si hay obstáculos.
+                    Share: terrain type, vehicle drivetrain, and any obstacles.
                 </p>
             </div>
         ),
@@ -213,25 +240,24 @@ const data: CardData[] = [
     },
 
     {
-        category: "Servicio",
-        title: "Entrega de Combustible",
+        category: "Service",
+        title: "Fuel Delivery",
         src: gas,
         content: (
             <div className="space-y-4 text-neutral-700 dark:text-neutral-200">
                 <p>
-                    Te llevamos el combustible correcto para que continúes tu ruta sin
-                    complicaciones.
+                    We bring the correct fuel so you can continue your trip without hassle.
                 </p>
                 {/* Entrega de Combustible */}
                 <FancyList
                     items={[
-                        "Gasolina regular, premium o diésel",
-                        "Carga segura y limpia",
-                        "Verificación de arranque",
+                        "Regular, premium gasoline or diesel",
+                        "Clean and safe fueling",
+                        "Start-up verification",
                     ]}
                 />
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                    Indica: tipo de combustible y cantidad aproximada.
+                    Tell us: fuel type and approximate amount.
                 </p>
             </div>
         ),

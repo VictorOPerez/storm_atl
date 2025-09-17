@@ -51,18 +51,18 @@ export default function Hero({ city = "[Tu Ciudad]" }: HeroProps) {
         const base = `https://wa.me/${WA_NUMBER}?text=`;
         const link = mapsLinkGoogle();
         const msg =
-            `Necesito asistencia de grúa.
-Ubicación (Google Maps): ${link}
-Autopista/ciudad: ${city}
-Referencia/milla/salida: ${loc || "(sin detalles)"}
-Vehículo: [Marca/Modelo/Color]  Placa: ______
-Tipo de ayuda: [Remolque / Batería / Llanta / Combustible / Cerrajería]
-Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
+            `I need towing/roadside assistance.
+Location (Google Maps): ${link}
+Highway/City: ${city}
+Reference/mile/exit: ${loc || "(no details)"}
+Vehicle: [Make/Model/Color]  Plate: ______
+Type of help: [Towing / Battery / Tire / Fuel / Lockout]
+Safety notes: [Right shoulder / Parking lot / Level -2]`;
         window.open(base + encodeURIComponent(msg), "_blank");
     }
 
     return (
-        <section className="relative overflow-hidden" aria-label="Servicio de Grúa y Asistencia Vial">
+        <section className="relative overflow-hidden" aria-label="Towing & Roadside Assistance">
             {/* Fondo */}
             {/* VISUAL DESKTOP A LA DERECHA (no afecta móvil) */}
             <div
@@ -131,20 +131,20 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                 {/* Texto arriba */}
                 <div className="max-w-2xl mt-10">
                     <h1 className="text-3xl sm:text-4xl lg:text-[44px] leading-tight font-extrabold text-white">
-                        Servicio de Grúa y
+                        Towing Service and
                         <br />
-                        Asistencia Vial en{" "}
+                        Roadside Assistance in{" "}
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
                             {city}
                         </span>
                     </h1>
 
                     <p className="mt-4 text-white/90 text-base sm:text-lg">
-                        Llegamos más rápido. ETA preciso y operadores certificados 24/7.
+                        Faster arrival. Accurate ETA and certified operators 24/7.
                     </p>
 
                     <div className="mt-5 flex flex-wrap gap-3">
-                        {["24/7", "ETA en tiempo real", "Operadores"].map((t) => (
+                        {["24/7", "Real-time ETA", "Operators"].map((t) => (
                             <span
                                 key={t}
                                 className="group relative px-4 py-2 rounded-full text-sm text-white/95 bg-white/5 ring-1 ring-white/15
@@ -164,7 +164,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                 <button
                     type="button"
                     onClick={() => setSheetOpen(true)}
-                    aria-label="Abrir SOS — solicitar ayuda de emergencia"
+                    aria-label="Open SOS — request emergency help"
                     className="absolute z-50 bottom-25 right-5 md:bottom-7 md:right-7
                flex items-center gap-2 h-14 rounded-full px-5
                text-white font-extrabold
@@ -178,7 +178,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                         aria-hidden="true"
                         className="absolute inset-0 -z-10 rounded-full animate-ping bg-red-500/25"
                     />
-                    <span className="whitespace-nowrap">Emergencia 24/7</span>
+                    <span className="whitespace-nowrap">Emergency 24/7</span>
 
                     {/* Badge SOS rojo para reforzar intención */}
                     <span className="ml-1 text-[10px] font-black bg-red-600 px-2 py-0.5 rounded-full">
@@ -215,7 +215,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                         <button
                             type="button"
                             onClick={openWhatsApp}
-                            aria-label="Enviar mi ubicación por WhatsApp"
+                            aria-label="Send my location via WhatsApp"
                             className="group w-full relative rounded-3xl px-4 py-2 text-lg font-extrabold text-white
                    [--g1:#28E576] [--g2:#25D366] [--g3:#1FB556]
                    bg-[linear-gradient(180deg,var(--g1),var(--g2)_60%,var(--g3))]
@@ -272,7 +272,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                         {/* Nota para WhatsApp + enviar rápido */}
                         <div className="mt-3">
                             <label htmlFor="loc" className="block text-white/85 text-xs font-medium mb-1">
-                                Nota para el operador <span className="text-white/60">(se enviará por WhatsApp)</span>
+                                Note for the operator <span className="text-white/60">(will be sent via WhatsApp)</span>
                             </label>
                             <div className="relative">
                                 <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2">
@@ -282,7 +282,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                                     id="loc"
                                     value={loc}
                                     onChange={(e) => setLoc(e.target.value)}
-                                    placeholder="Autopista/milla o referencia (ej: I-75 N, mm 245, hombro derecho)"
+                                    placeholder="Highway/mile or landmark (e.g., I-75 N, mm 245, right shoulder)"
                                     className="w-full text-white placeholder-white/60 bg-white/10 ring-1 ring-white/20
                        rounded-2xl pl-10 pr-12 py-3 outline-none
                        focus:ring-4 focus:ring-cyan-400/40"
@@ -290,7 +290,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                                 <button
                                     type="button"
                                     onClick={openWhatsApp}
-                                    aria-label="Enviar por WhatsApp"
+                                    aria-label="Send via WhatsApp"
                                     className="absolute right-2 top-1/2 -translate-y-1/2 grid place-items-center h-9 w-9 rounded-full
                        bg-[#25D366] ring-1 ring-black/10
                        shadow-[0_10px_24px_rgba(37,211,102,0.45)] hover:brightness-110"
@@ -299,7 +299,7 @@ Notas de seguridad: [Hombro derecho / Estacionamiento / Nivel -2]`;
                                 </button>
                             </div>
                             <p className="mt-1 text-[11px] text-white/70">
-                                Tip: mantén presionado en el mapa para soltar un pin y compártelo por WhatsApp.
+                                Tip: press and hold on the map to drop a pin and share it via WhatsApp.
                             </p>
                         </div>
                     </div>

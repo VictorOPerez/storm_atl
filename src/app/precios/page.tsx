@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Precios | Atlanta Towing",
+    title: "Pricing | Atlanta Towing",
     description:
-        "Transparencia total 24/7. Tarifas de remolque y asistencia vial de Atlanta Towing.",
+        "Full transparency 24/7. Atlanta Towing’s towing and roadside assistance rates.",
     alternates: { canonical: "/precios" },
 };
 
@@ -14,30 +14,30 @@ export default function PreciosPage() {
             <div className="mx-auto w-full max-w-[780px] px-5 py-10 sm:py-14">
                 {/* Título */}
                 <h1 className="text-center text-[52px] leading-none font-extrabold tracking-[0.04em] sm:text-[68px]">
-                    PRECIOS
+                    PRICING
                 </h1>
                 <p className="mt-3 text-center text-[18px] sm:text-[20px] tracking-[0.2em] text-white/60 uppercase">
-                    TRANSPARENCIA TOTAL 24/7
+                    24/7 FULL TRANSPARENCY
                 </p>
 
                 {/* línea roja */}
                 <div className="mt-6 h-[2px] w-full bg-[#D3413C]/90"></div>
 
                 {/* --------- TARIFAS DE REMOLQUE --------- */}
-                <SectionTitle>Tarifas de Remolque</SectionTitle>
+                <SectionTitle>Towing Rates</SectionTitle>
 
                 <Box>
-                    <Row label="Enganche" price="$XX" />
+                    <Row label="Hook-up fee" price="$XX" />
                     <Divider />
-                    <Row label="Por milla" price="$X.X" />
+                    <Row label="Per mile" price="$X.X" />
                     <Divider />
                     <Row
-                        label="Recargos"
+                        label="Surcharges"
                         price={
                             <>
-                                Fuera de horario
+                                After-hours
                                 <br />
-                                Km &gt; 30 millas
+                                Over 30 miles
                                 <br />
                                 4x4
                             </>
@@ -46,27 +46,27 @@ export default function PreciosPage() {
                 </Box>
 
                 {/* --------- TARIFAS FIJAS DE ASISTENCIA VIAL --------- */}
-                <SectionTitle>Tarifas fijas de asistencia vial</SectionTitle>
+                <SectionTitle>Flat Roadside Assistance Rates</SectionTitle>
 
                 <Box>
-                    <Row label="Cambio de llanta" price="$XX" />
+                    <Row label="Tire change" price="$XX" />
                     <Divider />
-                    <Row label="Paso de corriente" price="$XX" />
+                    <Row label="Jump start" price="$XX" />
                     <Divider />
-                    <Row label="Apertura de puertas" price="$XX" />
+                    <Row label="Lockout (door unlock)" price="$XX" />
                     <Divider />
-                    <Row label="Entrega de combustible" price="$XX" />
+                    <Row label="Fuel delivery" price="$XX" />
                     <Divider />
-                    <Row label="Winch out" price="$XX" />
+                    <Row label="Winch-out" price="$XX" />
                 </Box>
 
                 {/* Aclaración */}
                 <div className="mt-8 text-[15px] leading-relaxed">
-                    <span className="font-extrabold tracking-wide">ACLARACIÓN</span>
+                    <span className="font-extrabold tracking-wide">NOTE</span>
                     <span className="text-white/85">
                         {" "}
-                        Estos son nuestros precios estándar. El operador confirmará el costo
-                        final según distancia, tipo de vehículo y condiciones del servicio.
+                        These are our standard prices. The operator will confirm the final
+                        cost based on distance, vehicle type, and service conditions.
                     </span>
                 </div>
             </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 export const metadata: Metadata = {
-    title: "Área de Cobertura | Atlanta Towing",
+    title: "Service Area | Atlanta Towing",
     description:
-        "Cobertura de servicio de grúa y asistencia vial en Atlanta y alrededores: ciudades, condados y autopistas.",
+        "Towing and roadside assistance coverage across Atlanta and surrounding areas: cities, counties, and highways.",
     alternates: { canonical: "/area-de-cobertura" },
 };
 
@@ -18,10 +18,9 @@ export default function CoveragePage() {
         <main className="min-h-[100dvh] bg-[#0B0B10] text-white">
             {/* Header con logo + CTAs (como tu mockup) */}
 
-
             <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-20">
                 <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight">
-                    Área de Cobertura
+                    Service Area
                 </h1>
 
                 {/* Mapa incrustado con polígono */}
@@ -30,19 +29,19 @@ export default function CoveragePage() {
                 </section>
 
                 {/* Listas: ciudades, condados, autopistas */}
-                <SectionCard title="Ciudades">
+                <SectionCard title="Cities">
                     <ul className="space-y-1 text-lg">
                         <li>• Atlanta, Decatur, Marietta, Sandy Springs, etc.</li>
                     </ul>
                 </SectionCard>
 
-                <SectionCard title="Condados">
+                <SectionCard title="Counties">
                     <ul className="space-y-1 text-lg">
                         <li>• Fulton, DeKalb, Cobb, Gwinnett, Clayton</li>
                     </ul>
                 </SectionCard>
 
-                <SectionCard title="Autopistas y referencias">
+                <SectionCard title="Highways & Landmarks">
                     <ul className="space-y-1 text-lg">
                         <li>• I-285 · I-75 · I-85 · 20 · GA-400 · I-675</li>
                         <li>• Hartsfield-Jackson</li>

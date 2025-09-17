@@ -76,7 +76,7 @@ export default function CoverageMapInner() {
 
             <div className="pointer-events-none absolute inset-x-0 top-3 flex justify-center">
                 <span className="rounded-full bg-white/70 px-3 py-1 text-sm font-semibold text-slate-900 backdrop-blur">
-                    Atlanta (zona de cobertura)
+                    Atlanta (coverage area)
                 </span>
             </div>
         </div>

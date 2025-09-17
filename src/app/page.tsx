@@ -14,7 +14,7 @@ export default function Page() {
       {/* Tu navbar fijo arriba */}
       <Hero city="Atlanta" />
       <ServiciosSection />
-      <DailyRoutineHeading text="Nuestro día a día" className="py-10" />
+      <DailyRoutineHeading text="Our daily life" className="py-10" />
 
       <ParallaxGallery />
       <TestimonialsSection />

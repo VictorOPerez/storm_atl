@@ -7,19 +7,11 @@ import DailyRoutineHeading from "./TituloParalax";
 
 export default function ServiciosSection() {
     const trust = [
-        { title: "+ 50,000", subtitle: "Servicios Completados", Icon: TrophyNeon },
-        { title: "15", subtitle: "Años de Experiencia", Icon: CalendarNeon },
-        { title: "Operadores", subtitle: "Certificados WreckMaster", Icon: ShieldNeon },
+        { title: "+ 50,000", subtitle: "Completed Services", Icon: TrophyNeon },
+        { title: "15", subtitle: "Years of Experience", Icon: CalendarNeon },
+        { title: "Operators", subtitle: "WreckMaster Certified", Icon: ShieldNeon },
     ];
 
-    const services = [
-        { label: "Remolque", href: "#", Icon: TowNeon },
-        { label: "Cambio de Llanta", href: "#", Icon: TireNeon },
-        { label: "Paso de Corriente", href: "#", Icon: BatteryNeon },
-        { label: "Apertura de Puertas", href: "#", Icon: DoorNeon },
-        { label: "Entrega de Combustible", href: "#", Icon: FuelNeon },
-        { label: "Winch Out", href: "#", Icon: WinchNeon },
-    ];
 
     return (
         <section className="relative bg-black text-white">
@@ -41,33 +33,10 @@ export default function ServiciosSection() {
                 </div>
 
                 {/* Título */}
-                <DailyRoutineHeading text=" SERVICIOS PRINCIPALES" className="mt-15" />
+                <DailyRoutineHeading text=" CORE SERVICES" className="mt-15" />
 
-                {/* <h2 className="mt-15 sm:mt-8 text-center text-[22px] sm:text-[24px] font-extrabold tracking-wide">
-                    SERVICIOS PRINCIPALES
-                </h2> */}
-
-                {/* Grid de Servicios (2x3) */}
                 <Carruselseccion />
-                {/* <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
-                    {services.map(({ label, href, Icon }) => (
-                        <a
-                            key={label}
-                            href={href}
-                            className="group rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-5 sm:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
-                        >
-                            <div className="flex items-start gap-3">
-                                <NeonSquare>
-                                    <Icon className="h-6 w-6" />
-                                </NeonSquare>
-                                <div className="flex-1">
-                                    <p className="text-[16px] sm:text-[17px] font-extrabold leading-tight">{label}</p>
-                                    <span className="mt-2 block h-[3px] w-8 rounded-full bg-gradient-to-r from-[#8D43FF] to-[#00D4FF]" />
-                                </div>
-                            </div>
-                        </a>
-                    ))}
-                </div> */}
+
             </div>
         </section>
     );

@@ -68,17 +68,17 @@ const IconShield: React.FC<{ className?: string }> = ({ className }) => (
 
 const LINKS = {
     servicios: [
-        { label: "Remolque 24/7", href: "/servicios/remolque" },
-        { label: "Cambio de llanta", href: "/servicios/llanta" },
+        { label: "24/7 Towing", href: "/servicios/remolque" },
+        { label: "Tire Change", href: "/servicios/llanta" },
         { label: "Jump Start", href: "/servicios/jump-start" },
-        { label: "Apertura de puertas", href: "/servicios/lockout" },
-        { label: "Combustible a domicilio", href: "/servicios/combustible" },
+        { label: "Lockout", href: "/servicios/lockout" },
+        { label: "Fuel Delivery", href: "/servicios/combustible" },
     ],
     empresa: [
-        { label: "Operadores certificados", href: "/equipo" },
-        { label: "Cobertura en Atlanta", href: "/cobertura" },
-        { label: "Precios", href: "/precios" },
-        { label: "Contacto", href: "/contacto" },
+        { label: "Certified Operators", href: "/equipo" },
+        { label: "Coverage in Atlanta", href: "/cobertura" },
+        { label: "Pricing", href: "/precios" },
+        { label: "Contact", href: "/contacto" },
     ],
 };
 
@@ -122,18 +122,17 @@ export default function Footer({
         <footer className="relative pt-15  bg-neutral-950 text-neutral-200">
             <GlowLine />
 
-
             {/* CTA superior dentro del footer */}
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
                 <section className="relative -translate-y-6 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-tr from-sky-500/10 via-blue-500/5 to-fuchsia-500/10 p-5 sm:p-6 lg:p-8 shadow-[0_0_40px_-10px_rgba(59,130,246,0.35)]">
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                            <p className="text-xs tracking-widest text-cyan-300/80">EMERGENCIA 24/7</p>
+                            <p className="text-xs tracking-widest text-cyan-300/80">EMERGENCY 24/7</p>
                             <h3 className="mt-1 text-xl font-semibold text-white sm:text-2xl">
-                                Servicio de Grúa y Asistencia Vial — {brand}
+                                Towing & Roadside Assistance — {brand}
                             </h3>
                             <p className="mt-1 text-sm text-neutral-300">
-                                ETA preciso, operadores certificados y amarres de 4 puntos.
+                                Accurate ETA, certified operators and 4-point tie-downs.
                             </p>
                         </div>
 
@@ -141,10 +140,10 @@ export default function Footer({
                             <a
                                 href={`tel:${tel}`}
                                 className="group inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_-6px_rgba(34,211,238,0.6)] transition hover:bg-cyan-400/20 focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
-                                aria-label="Llamar ahora"
+                                aria-label="Call now"
                             >
                                 <IconPhone className="h-4 w-4" />
-                                Llamar ahora
+                                Call now
                             </a>
 
                             <a
@@ -182,17 +181,17 @@ export default function Footer({
 
                         <p className="mt-2 flex items-center gap-2 text-sm text-neutral-300">
                             <IconClock className="h-4 w-4 text-cyan-300" />
-                            Atención 24/7 — ETA en tiempo real
+                            24/7 Service — Real-time ETA
                         </p>
 
                         <p className="mt-2 flex items-center gap-2 text-sm text-neutral-300">
                             <IconShield className="h-4 w-4 text-cyan-300" />
-                            Licenciados, asegurados y WreckMaster
+                            Licensed, insured, and WreckMaster
                         </p>
 
                         <div className="mt-4 flex flex-col gap-2 text-sm">
                             <a href={`tel:${tel}`} className="text-white/90 hover:text-white">
-                                Tel: {phone}
+                                Phone: {phone}
                             </a>
                             <a href={`mailto:${email}`} className="text-white/90 hover:text-white">
                                 {email}
@@ -201,8 +200,8 @@ export default function Footer({
                     </address>
 
                     {/* Servicios */}
-                    <nav aria-label="Servicios">
-                        <h4 className="text-sm font-semibold text-white">Servicios</h4>
+                    <nav aria-label="Services">
+                        <h4 className="text-sm font-semibold text-white">Services</h4>
                         <ul className="mt-3 space-y-2 text-sm text-neutral-300">
                             {LINKS.servicios.map((l) => (
                                 <li key={l.href}>
@@ -219,8 +218,8 @@ export default function Footer({
                     </nav>
 
                     {/* Empresa */}
-                    <nav aria-label="Empresa">
-                        <h4 className="text-sm font-semibold text-white">Empresa</h4>
+                    <nav aria-label="Company">
+                        <h4 className="text-sm font-semibold text-white">Company</h4>
                         <ul className="mt-3 space-y-2 text-sm text-neutral-300">
                             {LINKS.empresa.map((l) => (
                                 <li key={l.href}>
@@ -238,12 +237,12 @@ export default function Footer({
 
                     {/* Bloque de acción rápida */}
                     <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 sm:p-5">
-                        <p className="text-sm text-neutral-300">¿Necesitas ayuda ahora?</p>
+                        <p className="text-sm text-neutral-300">Need help now?</p>
                         <a
                             href={`tel:${tel}`}
                             className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-fuchsia-500 px-4 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(99,102,241,0.6)] transition hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
                         >
-                            <IconPhone className="h-4 w-4" /> Emergencia 24/7
+                            <IconPhone className="h-4 w-4" /> Emergency 24/7
                         </a>
 
                         <div className="mt-4 grid grid-cols-2 gap-2 text-xs">
@@ -259,7 +258,7 @@ export default function Footer({
                                 href="/eta"
                                 className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-center text-white/90 hover:text-white"
                             >
-                                ETA en tiempo real
+                                Real-time ETA
                             </a>
                         </div>
                     </div>
@@ -268,12 +267,12 @@ export default function Footer({
                 {/* Línea inferior */}
                 <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-neutral-400 sm:flex-row">
                     <p>
-                        © {new Date().getFullYear()} {brand}. Todos los derechos reservados.
+                        © {new Date().getFullYear()} {brand}. All rights reserved.
                     </p>
                     <div className="flex items-center gap-4">
-                        <a href="/privacidad" className="hover:text-white">Privacidad</a>
-                        <a href="/terminos" className="hover:text-white">Términos</a>
-                        <a href="#top" className="rounded-md border border-white/10 px-2 py-1 text-white/80 hover:text-white">Volver arriba</a>
+                        <a href="/privacidad" className="hover:text-white">Privacy</a>
+                        <a href="/terminos" className="hover:text-white">Terms</a>
+                        <a href="#top" className="rounded-md border border-white/10 px-2 py-1 text-white/80 hover:text-white">Back to top</a>
                     </div>
                 </div>
             </div>
