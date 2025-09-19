@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 type HeroProps = { city?: string };
 
-const DISPLAY_PHONE = "(55) 1234-5678"; // <- cámbialo
-const PHONE_E164 = "+155512345678";   // <- cámbialo (E.164)
-const WA_NUMBER = "155512345678";    // <- sin "+" para wa.me
+const DISPLAY_PHONE = "+1 (470)-573-0664"; // <- cámbialo
+const PHONE_E164 = "14705730664";   // <- cámbialo (E.164)
+const WA_NUMBER = "+14705730664";    // <- sin "+" para wa.me
 
 export default function Hero({ city = "[Tu Ciudad]" }: HeroProps) {
     const [loc, setLoc] = useState("");
@@ -210,13 +210,25 @@ Safety notes: [Right shoulder / Parking lot / Level -2]`;
                     >
                         {/* handle */}
                         <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-white/20" />
-
+                        {/* Llamar ahora */}
+                        <button
+                            type="button"
+                            onClick={openTel}
+                            className=" w-full rounded-3xl px-5 py-3 text-xl font-extrabold text-white
+                   bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-500
+                   hover:opacity-95 transition
+                   ring-1 ring-cyan-400/40 shadow-[0_14px_36px_-12px_rgba(56,189,248,0.55)]
+                   flex items-center justify-center gap-2"
+                        >
+                            <PhoneIcon className="h-14 w-14" />
+                            Call Now • {DISPLAY_PHONE}
+                        </button>
                         {/* CTA WhatsApp (más llamativo) */}
                         <button
                             type="button"
                             onClick={openWhatsApp}
                             aria-label="Send my location via WhatsApp"
-                            className="group w-full relative rounded-3xl px-4 py-2 text-lg font-extrabold text-white
+                            className="group w-full mt-2 relative rounded-3xl px-4  text-lg font-extrabold text-white
                    [--g1:#28E576] [--g2:#25D366] [--g3:#1FB556]
                    bg-[linear-gradient(180deg,var(--g1),var(--g2)_60%,var(--g3))]
                    shadow-[0_18px_40px_rgba(37,211,102,0.35)]
@@ -225,25 +237,13 @@ Safety notes: [Right shoulder / Parking lot / Level -2]`;
                             <span className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity bg-white" />
                             <span className="flex items-center justify-center gap-3">
                                 <span className="grid place-items-center h-14 w-14 rounded-2xl bg-white/10 ring-1 ring-white/25 shadow-inner">
-                                    <WhatsAppIcon className="h-14 w-14 text-white" />
+                                    <WhatsAppIcon className="h-10 w-10 text-white" />
                                 </span>
                                 Send Location on WhatsApp
                             </span>
                         </button>
 
-                        {/* Llamar ahora */}
-                        <button
-                            type="button"
-                            onClick={openTel}
-                            className="mt-2 w-full rounded-2xl px-5 py-3 text-base font-extrabold text-white
-                   bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-500
-                   hover:opacity-95 transition
-                   ring-1 ring-cyan-400/40 shadow-[0_14px_36px_-12px_rgba(56,189,248,0.55)]
-                   flex items-center justify-center gap-2"
-                        >
-                            <PhoneIcon className="h-5 w-5" />
-                            Call Now • {DISPLAY_PHONE}
-                        </button>
+
 
                         {/* Botones de pin manual */}
                         <div className="mt-3 grid grid-cols-2 gap-2">

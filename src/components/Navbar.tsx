@@ -9,7 +9,7 @@ type NavItem = { label: string; href: string };
 
 const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "Pricing", href: "/precios" },
+    // { label: "Pricing", href: "/precios" },
     { label: "Coverage", href: "/covertura" }, // verifica la ruta si es "cobertura"
     { label: "Contact", href: "/contacto" },
 ];

@@ -1,4 +1,5 @@
 // app/contacto/page.tsx
+import EmailJSContactForm from "@/components/EmailJSContactForm";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -47,68 +48,7 @@ export default function ContactoPage() {
                         Quick response. If it’s an emergency, use <strong>CALL NOW</strong>.
                     </p>
 
-                    <form className="mt-5 grid grid-cols-1 gap-4" action="#" method="post">
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            <Field label="Name" id="nombre">
-                                <input id="nombre" name="nombre" type="text" required className={inputCls} />
-                            </Field>
-                            <Field label="Phone" id="telefono">
-                                <input id="telefono" name="telefono" type="tel" inputMode="tel" required className={inputCls} />
-                            </Field>
-                        </div>
-
-                        <Field label="Location (address, cross street, or highway mile marker)" id="ubicacion">
-                            <input
-                                id="ubicacion"
-                                name="ubicacion"
-                                type="text"
-                                placeholder="E.g. I-75, mm 242 (northbound)"
-                                className={inputCls}
-                            />
-                        </Field>
-
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            <Field label="Service type" id="servicio">
-                                <select id="servicio" name="servicio" className={inputCls}>
-                                    <option>Towing</option>
-                                    <option>Tire change</option>
-                                    <option>Jump start</option>
-                                    <option>Lockout</option>
-                                    <option>Fuel delivery</option>
-                                    <option>Winch-out</option>
-                                </select>
-                            </Field>
-                            <Field label="Plates / Model (optional)" id="vehiculo">
-                                <input id="vehiculo" name="vehiculo" type="text" className={inputCls} />
-                            </Field>
-                        </div>
-
-                        <Field label="Details (optional)" id="mensaje">
-                            <textarea id="mensaje" name="mensaje" rows={4} className={inputCls} />
-                        </Field>
-
-                        <div className="mt-2 flex flex-wrap gap-3">
-                            <button
-                                type="submit"
-                                className="rounded-xl px-5 py-3 font-semibold text-white shadow-lg shadow-cyan-500/10"
-                                style={{ background: GRADIENT }}
-                            >
-                                Send request
-                            </button>
-                            <a
-                                href="https://wa.me/?text=Hi%20I%20need%20towing%20assistance"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="rounded-xl px-5 py-3 font-semibold text-white/90 ring-1 ring-white/20 hover:ring-white/40 bg-white/5"
-                            >
-                                WhatsApp
-                            </a>
-                        </div>
-
-                        <p className="mt-3 text-xs text-slate-400">
-                            By submitting, you agree to be contacted by our team to coordinate your service.
-                        </p>
-                    </form>
+                    <EmailJSContactForm inputCls={inputCls} gradient={GRADIENT} />
                 </NeonCard>
 
                 {/* QUICK CONTACT / INFO */}
@@ -118,14 +58,14 @@ export default function ContactoPage() {
                         <p className="mt-1 text-slate-300 text-sm">Immediate response 24/7</p>
                         <div className="mt-4 flex flex-wrap gap-3">
                             <a
-                                href="tel:+1XXXXXXXXXX"
+                                href="tel:+14705730664"
                                 className="rounded-xl px-5 py-3 font-semibold text-white shadow-lg shadow-cyan-500/10"
                                 style={{ background: GRADIENT }}
                             >
                                 CALL NOW
                             </a>
                             <a
-                                href="sms:+1XXXXXXXXXX?body=I%20need%20towing%20assistance"
+                                href="sms:14705730664?body=I%20need%20towing%20assistance"
                                 className="rounded-xl px-5 py-3 font-semibold text-white/90 ring-1 ring-white/20 hover:ring-white/40 bg-white/5"
                             >
                                 SMS
@@ -141,8 +81,8 @@ export default function ContactoPage() {
                     <NeonCard>
                         <h3 className="text-lg font-bold">Contact details</h3>
                         <div className="mt-3 grid gap-3 text-slate-300 text-sm">
-                            <div className="flex items-center gap-3"><IconPhone /> +1 (XXX) XXX-XXXX</div>
-                            <div className="flex items-center gap-3"><IconMail /> dispatch@atlantatowing.com</div>
+                            <div className="flex items-center gap-3"><IconPhone /> +1 (470)-573-0664</div>
+                            <div className="flex items-center gap-3"><IconMail /> atltowingnearme@gmail.com</div>
                             <div className="flex items-center gap-3"><IconPin /> 1234 Service Rd, Atlanta GA</div>
                             <div className="flex items-center gap-3"><IconClock /> 24/7 — 365 days</div>
                         </div>

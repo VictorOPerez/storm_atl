@@ -58,9 +58,9 @@ export default function RootLayout({
           {/* Footer al final */}
           <Footer
             brand="Atlanta Towing"
-            phone="(404) 555-0199"
-            whatsapp="(404) 555-0199"
-            email="help@atlantatowing.com"
+            phone="+14705730664"
+            whatsapp="+14705730664"
+            email="atltowingnearme@gmail.com"
           />
         </div>
       </body>
