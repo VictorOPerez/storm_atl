@@ -71,7 +71,7 @@ export default function Navbar() {
                         aria-label="Go to home"
                     >
                         <Image
-                            src="/logo/logo3.png"
+                            src="/logo/logo.png"
                             alt="Logo"
                             width={120}
                             height={40}
